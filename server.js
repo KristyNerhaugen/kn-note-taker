@@ -68,7 +68,7 @@ app.get('*', (req, res) => {
 })
 
 // method to make server listen 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}.`);
 });
 
