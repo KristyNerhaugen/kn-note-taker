@@ -1,0 +1,19 @@
+{
+  "notes": [
+    {
+      "id": "0",
+      "title": "Example Note To Do Item One",
+      "text": "First Note Example"
+    },
+    {
+      "title": "Example Note",
+      "text": "Example Note test number one",
+      "id": "1"
+    },
+    {
+      "title": "Example Three",
+      "text": "Testing example three",
+      "id": "2"
+    }
+  ]
+}
