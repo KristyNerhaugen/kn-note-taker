@@ -1,10 +1,13 @@
+const express = require('express');
 
+// connect to apiRoutes and htmlRoutes
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 const fs = require('fs');
 const path = require('path');
-const express = require('express');
 const PORT = process.env.PORT || 3001;
+const { notes } = require('./data/db.json');
+const { get } = require('http');
 
 // instantiate the server
 const app = express();
@@ -20,8 +23,6 @@ app.use(express.static('public'));
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-const { notes } = require('./data/db.json');
-const { get } = require('http');
 
 // moving createNewNote and validateNote functions to notes.js
 // function createNewNote(body, notesArray){

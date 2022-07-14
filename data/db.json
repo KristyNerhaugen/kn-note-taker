@@ -14,6 +14,26 @@
       "title": "Example Three",
       "text": "Testing example three",
       "id": "2"
+    },
+    {
+      "title": "Example Note Eight",
+      "text": "example text here",
+      "id": "3"
+    },
+    {
+      "title": "New note test",
+      "text": "testing new note",
+      "id": "4"
+    },
+    {
+      "title": "New Note",
+      "text": "adding another new note",
+      "id": "5"
+    },
+    {
+      "title": "New Note testing",
+      "text": "note test 500 ",
+      "id": "6"
     }
   ]
 }

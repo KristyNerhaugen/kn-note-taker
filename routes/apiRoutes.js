@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { createNewNote, validateNote } = require('../lib/notes');
 
 // GET /api/notes route for front end to request data and return saved data
-const { notes } = require('../data/db');
+const { notes } = require('../data/db.json');
 router.get('/notes', (req, res) => {
     res.json(notes);
 });

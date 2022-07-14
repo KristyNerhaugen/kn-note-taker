@@ -14,6 +14,6 @@ router.get('/', (req, res) => {
 // wildcard route to return to main index.html page if user tries to navigate to page that doesn't exist
 router.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
-})
+});
 
 module.exports = router;
