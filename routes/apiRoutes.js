@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { createNewNote, validateNote } = require('../lib/notes');
+const { createNewNote, validateNote, deleteNote } = require('../lib/notes');
 
 // GET /api/notes route for front end to request data and return saved data
 const { notes } = require('../data/db.json');
@@ -17,5 +17,11 @@ router.post('/notes', (req, res) => {
     res.json(note);
     }
 });
+
+// route to delete notes
+router.delete('/notes/:id', (req, res) => {
+    const params = req.params.id;
+    deleteNote(params, notes);
+})
 
 module.exports = router;

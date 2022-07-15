@@ -52,14 +52,18 @@ const saveNote = (note) =>
       alert('Thank you for adding a note.');
     });
 
+// deleteNote function to connect to apiRoutes so notes can be deleted 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
-  });
-
+  })
+    // used code below from codegrepper (https://www.codegrepper.com/code-examples/javascript/VM724%3A1+Uncaught+%28in+promise%29+SyntaxError%3A+Unexpected+token+%3C+in+JSON+at+position+0) to try to fix a console logged error about unexpected token in JSON promise
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
