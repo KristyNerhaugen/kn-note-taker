@@ -40,16 +40,34 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
-  });
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      alert('Error' + response.statusText);
+    })
+    .then(postResponse => {
+      console.log(postResponse);
+      alert('Thank you for adding a note.');
+    });
 
+// deleteNote function to connect to apiRoutes so notes can be deleted 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
-  });
-
+  })
+    // code below is based off of the code provided in the saveNote method above
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      alert('Error cannot delete note.');
+    })
+    
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
