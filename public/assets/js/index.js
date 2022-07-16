@@ -61,8 +61,12 @@ const deleteNote = (id) =>
     },
   })
     // used code below from codegrepper (https://www.codegrepper.com/code-examples/javascript/VM724%3A1+Uncaught+%28in+promise%29+SyntaxError%3A+Unexpected+token+%3C+in+JSON+at+position+0) to try to fix a console logged error about unexpected token in JSON promise
-    .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      alert('Error can not delete note.');
+    })
     
 const renderActiveNote = () => {
   hide(saveNoteBtn);
